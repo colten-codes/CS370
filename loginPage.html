@@ -1,41 +1,112 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
 
-h2{
-    text-align: center;
-    font-size: 100px;
-    height: 100px;
-
-
+h2 {
+    display: block;
+    font-size: 3.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
 }
-p{
-    text-align: center;
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
-div {
-  background-color: gray;
-  width: 300px;
+button {
+  background-color:aqua;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color:hotpink;
+}
+
+.imgcontainer {
   text-align: center;
-  border: 15px solid blue;
-  padding: 50px;
+  margin-top: 3%;
   margin-left: auto;
-  margin-top: auto;
   margin-right: auto;
-  margin-bottom: auto;
+  height: 50%;
+  width: 50%;
+}
 
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 20px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
 }
 </style>
 </head>
 <body>
 
-<h2>Convos</h2>
+<h2>Login</h2>
 
-<p>Convos is the most secure and up to date high tech portal to view and manage your grades!</p>
+<form action="/action_page.php" method="post">
+  <div class="imgcontainer">
+    <img src="/Users/coltencisler/CS370/61457.png" alt="Avatar" class="avatar">
+  </div>
 
-<div>Please enter your login information here.</div>
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+        
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
 
 </body>
 </html>
-
