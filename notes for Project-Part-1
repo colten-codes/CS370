@@ -1,3 +1,36 @@
+i am a bit unsure if this would work in html but it seems correct to add a captcha to the login screen.
+
+
+<form action="/login" method="post">
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username" />
+    <br />
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" />
+    <br />
+    <img src="/captcha" alt="CAPTCHA" />
+    <br />
+    <label for="captcha">Enter the text above:</label>
+    <input type="text" name="captcha" id="captcha" />
+    <br />
+    <input type="submit" value="Log in" />
+</form>
+
+This could be used in the java code to Generate a random string of letters and numbers.
+private String generateCAPTCHAText() {
+        String text = "";
+        Random rnd = new Random();
+        for (int i = 0; i < 6; i++) {
+            char c = (char) (rnd.nextInt(26) + 'A');
+            text += c;
+        }
+        return text;
+    }
+
+
+
+
+
 CREATE TABLE students (
 	student_id INT NOT NULL AUTO_INCREMENT,
 	bluegold_id VARCHAR(8) NOT NULL,
