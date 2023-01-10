@@ -9,6 +9,7 @@
 		echo "$conn->connect_error";
 		die("Connection Failed : ". $conn->connect_error);
 	} else {
+		//feel free to change all connections
 		$stmt = $conn->prepare("insert into login(username, password, captcha) values(?, ?, ?)");
 		$stmt->bind_param("sss", $username, $password, $captcha);
 		$execval = $stmt->execute();
