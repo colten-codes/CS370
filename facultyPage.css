@@ -11,7 +11,7 @@
 .addStudent{
     position: absolute;
     left:25vw;
-    top: 25vh;
+    top: 10vh;
     justify-content: center;
     text-align: center;
     border: 2px solid black;
@@ -21,10 +21,14 @@
 .updateStudent{
     position: absolute;
     right: 25vw;
-    top: 25vh;
+    top: 10vh;
     justify-content: center;
     text-align: center;
     border: 2px solid black;
     padding: 20px;
     border-radius: 15px;
+}
+.information{
+    position: absolute;
+    top: 50vh;
 }
