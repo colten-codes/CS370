@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<?php
+$conn = new mysqli('localhost','root','','cs370');
+
+$query = "SELECT fullName, bluegold_id, addr, phone, gpa, total_credit, balance from students";
+$result = mysqli_query($conn, $query);
+?>
+
 <html lang="en">
 <head>
 <title>Convos Home Page</title>
@@ -52,6 +58,40 @@
           <br><br>
           <input type="submit" value="Submit">
       </form>
+  </div>
+  <div class = "information">
+  <table border ="1" cellspacing="0" cellpadding="10">
+  <tr>
+    <th>Name</th>
+    <th>Blugold ID</th>
+    <th>Address</th>
+    <th>Phone Number</th>
+    <th>GPA</th>
+    <th>Total Credits</th>
+    <th>Balance</th>
+  </tr>
+<?php
+if (mysqli_num_rows($result) > 0) {
+  $sn=1;
+  while($data = mysqli_fetch_assoc($result)) {
+ ?>
+ <tr>
+
+   <td><?php echo $data['fullName']; ?> </td>
+   <td><?php echo $data["bluegold_id"]; ?> </td>
+   <td><?php echo $data["addr"]; ?> </td>
+   <td><?php echo $data['phone']; ?> </td>
+   <td><?php echo $data['gpa']; ?> </td>
+   <td><?php echo $data['total_credit']; ?> </td>
+   <td><?php echo $data['balance']; ?> </td>
+ <tr>
+ <?php
+  $sn++;}} else { ?>
+    <tr>
+     <td colspan="8">No data found</td>
+    </tr>
+ <?php } ?>
+  </table>
   </div>
 </div>
 
