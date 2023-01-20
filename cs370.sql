@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 19, 2023 at 09:41 PM
+-- Generation Time: Jan 20, 2023 at 09:32 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -30,15 +30,19 @@ SET time_zone = "+00:00";
 CREATE TABLE `logins` (
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `role` enum('student','faculty') NOT NULL
+  `role` enum('student','faculty','admin') NOT NULL,
+  `bluegold_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `logins`
 --
 
-INSERT INTO `logins` (`username`, `password`, `role`) VALUES
-('rhrastich', 'CS370sql', 'student');
+INSERT INTO `logins` (`username`, `password`, `role`, `bluegold_id`) VALUES
+('alexK', 'cs370', 'student', 14122001),
+('Coleton', '370', 'student', 370),
+('rhrastich', 'sql', 'student', 1234567890),
+('ryanhrastich', 'cs', 'faculty', 3071999);
 
 -- --------------------------------------------------------
 
@@ -49,8 +53,8 @@ INSERT INTO `logins` (`username`, `password`, `role`) VALUES
 CREATE TABLE `students` (
   `id` int(11) NOT NULL,
   `bluegold_id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `address` varchar(255) NOT NULL,
+  `fullName` varchar(255) NOT NULL,
+  `addr` varchar(255) NOT NULL,
   `phone` varchar(15) NOT NULL,
   `gpa` decimal(3,2) NOT NULL,
   `total_credit` int(11) NOT NULL,
@@ -61,10 +65,10 @@ CREATE TABLE `students` (
 -- Dumping data for table `students`
 --
 
-INSERT INTO `students` (`id`, `bluegold_id`, `name`, `address`, `phone`, `gpa`, `total_credit`, `balance`) VALUES
-(10000, 1234567890, 'Ryan Hrastich', '370 uwec ave.', '6512008722', '4.00', 100, 6000),
-(10001, 987654321, 'Ryan Raddish', '370 compSec ave.', '6512008722', '1.50', 115, 15000),
-(10002, 2147483647, 'Hras Tich', 'Student Info', 'Student Info', '3.50', 98, 3000);
+INSERT INTO `students` (`id`, `bluegold_id`, `fullName`, `addr`, `phone`, `gpa`, `total_credit`, `balance`) VALUES
+(10000, 1234567890, 'Ryan Hrastich', '150 terrence st.', '6512008722', '4.00', 100, 6000),
+(10005, 370, 'Coleton', 'Student Info', 'Student Info', '3.90', 0, 5000),
+(10006, 14122001, 'Alex', 'Student Info', 'Student Info', '0.00', 0, 5000);
 
 --
 -- Indexes for dumped tables
@@ -91,7 +95,7 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10003;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10007;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
