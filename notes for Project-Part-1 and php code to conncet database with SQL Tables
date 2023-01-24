@@ -156,3 +156,22 @@ CREATE TABLE logins (
 
 
 
+$password = $_POST['password'];
+$password = password_hash($password, PASSWORD_DEFAULT);
+
+
+$username = $_POST['username'];
+$username = password_hash($username, PASSWORD_DEFAULT);
+
+
+
+$result = $conn->prepare("Select * from logins where username = '$username' and password= '$password' ");
+
+
+
+
+
+
+
+
+
