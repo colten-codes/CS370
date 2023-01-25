@@ -1,0 +1,28 @@
+Alex Kutsunis 
+
+Ryan Hrastich 
+
+Colten Cisler 
+
+CS 370 
+
+Final Presentation Overview 
+
+25 January 2023 
+
+ 
+
+Our project included designing and implementing a fully operational Student Information System that includes a client server, a student information database, and a login database. Both databases are located on the server machine. The student information database includes information such as student name, Blugold ID, address, phone number, GPA, and total credits earned. The system allows students to update their personal information and faculty to enter, update, and retrieve student information, check student account balances, and charge tuition. The system includes a login system where users can log in with a username and password and the server will authenticate and authorize the login. The system also includes a user-friendly GUI and displays related information with a timestamp when a request or transaction is made. These components work seamlessly together to create the functioning Student Information System. 
+
+After opening the website, you can log into it. The software will verify that the information in the login form is authentic and will read if the user is either a student or faculty member. For the login portion of this task, we utilized PHP, XAMPP and CSS. The username and passwords were implemented through encryption via hashing and storing it within the database. This created efficiency and enhanced safety. We also implemented the code for the captcha using reCAPTCHA. This was accomplished through adding some PHP code to the login through a reCAPTCHA activation key. Tables were created using SQL, essentially creating data for students and logins. To store the information, we used the software XAMPP that uses SQL to make tables, so we can store the GPA, Blugold ID, total credits earned, and balance. We connected the tables/database to our website using PHP.  
+
+If the user is a student, they can view their username, Blugold ID, address, phone number, GPA, total credits, and balances. Students can update their name, address, phone number, username, and password from the student page. This was done using prepare statements to update the database with changes initiated by the students. 
+
+If the user is a faculty member, they can view the student information database, which is a table on the faculty page. The faculty member will be able to change the GPA, total credits, and balance of any of the students by entering their Blugold ID. The faculty member will also be able to add a new student by typing in the student's new Blugold ID as well as the student's name. This form will default the student's information database by putting “Student Info” into to their address and phone number and placing 0 into their GPA, total credits, and placing $5000 into their balance for tuition.  
+
+Creating a new student will also create a new login for the new student with their username being their name and their password being their Blugold ID. When the new student tries to log in using this information, it will automatically take them to an “update username and password” page where they can make their account login information their own. If a user tries to change their username and password (they do not have to change their username, they can just change their password by placing their original username into the first slot) the software will check to make sure that the username does not already exist, and the password must be a new password and must be typed twice in order to successfully change.  
+
+In the project we implemented some of the following techniques: creation of certificates for WWW. Implementing SSL/TLS in the system by redirecting to https. Finally, we encrypted the username and password by hashing. These techniques will enhance security by ensuring that the communication between the server and the client side are encrypted, and by verifying the identity of the website or server that the client is communicating with. 
+
+ 
+ 
