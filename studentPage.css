@@ -1,0 +1,38 @@
+.content{
+    position: relative;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    height: 100vh;
+    top: 0vh;
+}
+.info{
+    position: absolute;
+    margin: auto;
+    top: 25vh;
+    left: 10vw;
+    justify-content: center;
+    text-align: center;
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 15px;
+}
+.update{
+    position: absolute;
+    margin: auto;
+    top: 10vh;
+    right: 25vw;
+    justify-content: center;
+    text-align: center;
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 15px;
+}
+.list{
+    text-align: left;
+}
+.hide{
+    display: none;
+}
